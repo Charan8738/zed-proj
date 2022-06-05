@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+    <style>
+        *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+table {
+  max-width: 960px;
+  margin: 10px auto;
+}
+
+caption {
+  font-size: 1.6em;
+  font-weight: 400;
+  padding: 10px 0;
+  text-align:left;
+}
+
+thead th {
+  font-weight: 400;
+  background: #8a97a0;
+  color: #FFF;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #e8eeef;
+}
+
+th, td {
+  text-align: left;
+  padding: 20px;
+  font-weight: 300;
+}
+
+tfoot tr {
+  background: none;
+}
+
+tfoot td {
+  padding: 10px 2px;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #8a97a0;
+}
+    </style>
+</head>
+<body>
+    <table>
+        <caption><%= ClientName %> - <%= ClientDesc %></caption>
+        <thead>
+          <tr>
+            <th scope="col">Fare Id</th>
+            <th scope="col">Fare Amount</th>
+            <th scope="col">Category Id</th>
+            <th scope="col">Route Name</th>
+            <th scope="col">Is Active</th>
+            <th scope="col">Valid Till</th>
+            <th scope="col">CreatedData</th>
+            <th scope="col">createdby</th>
+            <th scope="col">LastUpdatedDate</th>
+            <th scope="col">LastUpdatedBy</th>
+            <th scope="col">AgencyId</th>
+            <th scope="col">serverdate</th>
+            <th scope="col">Type</th>
+            <th scope="col">ExpiryTime</th>
+            <th scope="col">ZoneId</th>
+            <th scope="col">Farename</th>
+            <th scope="col">MaxCount</th>
+            <th scope="col">ProductDescription</th>
+            <th scope="col">ProductMiscDescription</th>
+            <th scope="col">Verification Status</th>
+            <th scope="col">PaymentMode</th>
+            <th scope="col">ProductName</th>
+            <th scope="col">ProductCost</th>
+            <th scope="col">ProductVegCategory</th>
+            <th scope="col">ProductImageURL</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="3">Data collected from https://run.mocky.io/v3/45752826-6a0c-4cba-921c-a34f03f9cd6c</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <% list.forEach((item) => { %>
+            <tr>
+            <th scope="row"><%= item.FareId %></th>
+            <th><%= item.FareAmount %></th>
+            <th><%= item.CategoryId %></th>
+            <th><%= item.RouteName %></th>
+            <th><%= (!(item.IsActive) ? 'True' : 'False') %></th>
+            <th><%= item.ValidTill %></th>
+            <th><%= item.CreatedDate %></th>
+            <th><%= item.createdby %></th>
+            <th><%= item.LastUpdatedDate %></th>
+            <th><%= item.LastUpdatedBy %></th>
+            <th><%= item.AgencyId %></th>
+            <th><%= item.serverdate %></th>
+            <th><%= item.Type %></th>
+            <th><%= item.ExpiryTime %></th>
+            <th><%= item.ZoneId %></th>
+            <th><%= item.Farename %></th>
+            <th><%= item.MaxCount %></th>
+            <th><%= item.ProductDescription %></th>
+            <th><%= item.ProductMiscDescription %></th>
+            <th><%= item.VerificationStatus %></th>
+            <th><%= item.PaymentMode %></th>
+            <th><%= item.ProductName %></th>
+            <th><%= item.ProductCost %></th>
+            <th><%= item.ProductVegCategory %></th>
+            <th><%= item.ProductImageURL %></th>
+            <th><%= item.Category %></th>
+            </tr>    
+          <% }) %>
+        </tbody>
+      </table>
+</body>
+</html>
